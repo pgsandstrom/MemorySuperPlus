@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Router from 'next/router';
 
 class Welcome extends React.Component {
   constructor(props) {
@@ -23,10 +24,9 @@ class Welcome extends React.Component {
     }
   }
 
-  // goto() {
-  //   const path = `/${this.state.id}`;
-  //   this.props.history.push(path);
-  // }
+  goto() {
+    Router.push(`/home/${this.state.id}`);
+  }
 
   render() {
     return (<div>

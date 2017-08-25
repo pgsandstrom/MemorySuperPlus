@@ -9,14 +9,16 @@ app.prepare()
   .then(() => {
     const server = express();
 
-    server.get('/a', (req, res) => app.render(req, res, '/b', req.query));
+    server.get('/home/*', (req, res) => app.render(req, res, '/home', req.query));
 
-    server.get('/b', (req, res) => app.render(req, res, '/a', req.query));
+    server.get('/b', (req, res) => { app.render(req, res, '/home', req.query); });
 
     server.get('*', (req, res) => handle(req, res));
 
     server.listen(3000, (err) => {
-      if (err) throw err;
+      if (err) {
+        throw err;
+      }
       console.log('> Ready on http://localhost:3000');
     });
   });

@@ -20,6 +20,7 @@ module.exports = {
 
     // The follow rules are turned off due to using next.js
     "react/jsx-filename-extension": ["off"],
-    "react/react-in-jsx-scope": ["off"]
+    "react/react-in-jsx-scope": ["off"],
+    "no-undef": ["off"],
   },
 };
