@@ -10,7 +10,7 @@ class Welcome extends React.Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onKeyPress = this.onKeyPress.bind(this);
-    // this.goto = this.goto.bind(this);
+    this.goto = this.goto.bind(this);
   }
 
   onChange(e) {

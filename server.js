@@ -9,7 +9,11 @@ app.prepare()
   .then(() => {
     const server = express();
 
-    server.get('/home/*', (req, res) => app.render(req, res, '/home', req.query));
+    server.get('/home/:id', (req, res) => {
+      const id = req.params.id;
+      const newQuery = Object.assign({}, req.query, { id });
+      app.render(req, res, '/home', newQuery);
+    });
 
     server.get('/b', (req, res) => { app.render(req, res, '/home', req.query); });
 
